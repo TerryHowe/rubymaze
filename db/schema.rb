@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170510163551) do
     t.datetime "updated_at", null: false
     t.index ["destination_id"], name: "index_passages_on_destination_id"
     t.index ["source_id"], name: "index_passages_on_source_id"
+    t.index [nil, "direction"], name: "index_passages_on_source_and_direction", unique: true
   end
 
   create_table "rooms", force: :cascade do |t|

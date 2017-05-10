@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PassageControllerTest < ActionDispatch::IntegrationTest
+class PassagesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

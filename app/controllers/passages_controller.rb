@@ -1,4 +1,4 @@
-class PassageController < ApplicationController
+class PassagesController < ApplicationController
    def index
       @passages = Passage.all
    end

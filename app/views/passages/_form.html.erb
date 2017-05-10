@@ -1,0 +1,31 @@
+<%= form_for(@passage) do |f| %>
+ 
+  <% if @passage.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@passage.errors.count, "error") %> prohibited
+        this passage from being saved:
+      </h2>
+      <ul>
+        <% @passage.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :x %><br>
+    <%= f.text_field :x %>
+  </p>
+ 
+  <p>
+    <%= f.label :y %><br>
+    <%= f.text_field :y %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

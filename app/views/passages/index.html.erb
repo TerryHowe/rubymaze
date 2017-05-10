@@ -1,0 +1,22 @@
+<h1>Passages</h1>
+ 
+<table>
+  <tr>
+    <th>x</th>
+    <th>y</th>
+  </tr>
+ 
+  <% @passages.each do |passage| %>
+    <tr>
+      <td><%= passage.x %></td>
+      <td><%= passage.y %></td>
+      <td><%= link_to 'Show', passage_path(passage) %></td>
+      <td><%= link_to 'Edit', edit_passage_path(passage) %></td>
+      <td><%= link_to 'Destroy', passage_path(passage),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New passage', new_passage_path %>

@@ -7,5 +7,6 @@ class CreatePassages < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+	 add_index :passages, [:source, :direction], unique: true
   end
 end
