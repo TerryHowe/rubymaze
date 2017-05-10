@@ -24,15 +24,15 @@ class RoomsController < ApplicationController
       end
    end
 
-	def update
-  		@room = Room.find(params[:id])
+   def update
+      @room = Room.find(params[:id])
  
-  		if @room.update(room_params)
-    		redirect_to @room
-  		else
-    		render 'edit'
-  		end
-	end
+      if @room.update(room_params)
+        redirect_to @room
+      else
+        render 'edit'
+      end
+   end
 
    def destroy
       @room = Room.find(params[:id])

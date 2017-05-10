@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170510163551) do
     t.integer "y"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["x", "y"], name: "index_rooms_on_x_and_y", unique: true
   end
 
 end
