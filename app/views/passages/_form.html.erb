@@ -15,15 +15,20 @@
   <% end %>
  
   <p>
-    <%= f.label :x %><br>
-    <%= f.text_field :x %>
+    <%= f.label :source %><br>
+    <%= f.select :source, Room.all.collect { |p| [p.x.to_s + "," + p.y.to_s, p.id ] }, include_blank: true %>
   </p>
  
   <p>
-    <%= f.label :y %><br>
-    <%= f.text_field :y %>
+    <%= f.label :destination %><br>
+    <%= f.select :destination, Room.all.collect { |p| [p.x.to_s + "," + p.y.to_s, p.id ] }, include_blank: true %>
   </p>
  
+  <p>
+    <%= f.label :direction %><br>
+    <%= f.select :direction, [['North',0],['East',1],['South',2],['West',3]], include_blank: true %>
+  </p>
+
   <p>
     <%= f.submit %>
   </p>
