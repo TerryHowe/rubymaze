@@ -1,7 +1,30 @@
-# README
+# Ruby on Rails Maze
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I haven't written a Ruby on Rails application for years, but I wanted to
+revisit it for my 3D maze series.  Obviously, there would be better ways
+to implement a 3D Maze, but this is more of an exercise in using Ruby
+on Rails.
+
+                                   /
+                                  / 
+    --+                          +  
+      |\                        /|  
+      | \                      / |  
+      |  +                    +  |  
+      |  |                    |  |  
+      |  |                    |  |  
+      |  |                    |  |  
+      |  |                    |  |  
+      |  |                    |  |  
+      |  |                    |  |  
+      |  |                    |  |  
+      |  +                    +  |  
+      | /                      \ |  
+      |/                        \|  
+    --+                          +  
+                                  \ 
+                                   \
+
 
 Things you may want to cover:
 
@@ -20,5 +43,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
