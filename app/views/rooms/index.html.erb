@@ -1,0 +1,18 @@
+<h1>Listing Rooms</h1>
+ 
+<table>
+  <tr>
+    <th>x</th>
+    <th>y</th>
+  </tr>
+ 
+  <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.x %></td>
+      <td><%= room.y %></td>
+      <td><%= link_to 'Show', room_path(room) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New room', new_room_path %>
