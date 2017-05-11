@@ -19,6 +19,7 @@ class PassagesController < ApplicationController
       @passage = Passage.new
       @passage.source = Room.find(params['passage']['source'])
       @passage.destination = Room.find(params['passage']['destination'])
+      @passage.direction = params['passage']['direction'].to_i
       if @passage.save
          redirect_to @passage
       else
