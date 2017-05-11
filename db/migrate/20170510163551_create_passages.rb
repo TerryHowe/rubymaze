@@ -1,8 +1,8 @@
 class CreatePassages < ActiveRecord::Migration[5.1]
   def change
     create_table :passages do |t|
-      t.references :source, foreign_key: true
-      t.references :destination, foreign_key: true
+      t.references :source, references: :rooms
+      t.references :destination, references: :rooms
       t.integer :direction
 
       t.timestamps
