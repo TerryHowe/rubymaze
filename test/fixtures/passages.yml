@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  room: one
-
-two:
-  room: two
+#one:
+#  source: one
+#  destination: two
+#  direction: 0
