@@ -42,6 +42,6 @@ class PassagesController < ApplicationController
 
    private
       def passage_params
-         params.require(:passage).permit(:x, :y)
+         params.require(:passage).permit(:source, :destination, :direction)
       end
 end
