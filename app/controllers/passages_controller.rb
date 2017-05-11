@@ -29,8 +29,10 @@ class PassagesController < ApplicationController
 
    def update
       @passage = Passage.find(params[:id])
- 
-      if @passage.update(passage_params)
+      @passage.source = Room.find(params['passage']['source'])
+      @passage.destination = Room.find(params['passage']['destination'])
+      @passage.direction = params['passage']['direction'].to_i
+      if @passage.update()
         redirect_to @passage
       else
         render 'edit'
@@ -42,9 +44,4 @@ class PassagesController < ApplicationController
       @passage.destroy
       redirect_to passages_path
    end
-
-   private
-      def passage_params
-         params.require(:passage).permit(:source, :destination, :direction)
-      end
 end
