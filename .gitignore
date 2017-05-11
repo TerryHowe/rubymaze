@@ -51,3 +51,4 @@ build-iPhoneSimulator/
 log/
 *sqlite3
 .*.swp
+public/assets/
