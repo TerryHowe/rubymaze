@@ -2,14 +2,16 @@
  
 <table>
   <tr>
-    <th>x</th>
-    <th>y</th>
+    <th>source</th>
+    <th>destination</th>
+    <th>direction</th>
   </tr>
  
   <% @passages.each do |passage| %>
     <tr>
-      <td><%= passage.x %></td>
-      <td><%= passage.y %></td>
+      <td><%= passage.source.x %></td>
+      <td><%= passage.destination.x %></td>
+      <td><%= passage.direction %></td>
       <td><%= link_to 'Show', passage_path(passage) %></td>
       <td><%= link_to 'Edit', edit_passage_path(passage) %></td>
       <td><%= link_to 'Destroy', passage_path(passage),

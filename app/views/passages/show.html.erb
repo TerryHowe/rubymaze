@@ -1,8 +1,15 @@
 <h1>Passage</h1>
 <p>
-  <strong>X,Y:</strong>
-  <%= @passage.x %>,
-  <%= @passage.y %>
+  <strong>source:</strong>
+  <%= @passage.source.x %>,
+  <%= @passage.source.y %>
+  <br>
+  <strong>destination:</strong>
+  <%= @passage.destination.x %>,
+  <%= @passage.destination.y %>
+  <br>
+  <strong>direction:</strong> <%= @passage.direction %>
+  <br>
 </p>
 
 <%= link_to 'Edit', edit_passage_path(@passage) %> |
