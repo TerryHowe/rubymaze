@@ -1,6 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-#one:
-#  source: one
-#  destination: two
-#  direction: 0
+one:
+  source: room00
+  destination: room01
+  direction: <%= Passage.directions[:north] %>
+
+two:
+  source: room01
+  destination: room00
+  direction: <%= Passage.directions[:south] %>
