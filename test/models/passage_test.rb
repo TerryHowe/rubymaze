@@ -14,26 +14,23 @@ class PassageTest < ActiveSupport::TestCase
   end
 
   test "get left direction" do
-    sut = Passage.new()
-    assert_equal('west', sut.get_left_direction(:north))
-    assert_equal('north', sut.get_left_direction(:east))
-    assert_equal('east', sut.get_left_direction(:south))
-    assert_equal('south', sut.get_left_direction(:west))
+    assert_equal('west', Passage.get_left_direction(:north))
+    assert_equal('north', Passage.get_left_direction(:east))
+    assert_equal('east', Passage.get_left_direction(:south))
+    assert_equal('south', Passage.get_left_direction(:west))
   end
 
   test "get right direction" do
-    sut = Passage.new()
-    assert_equal('east', sut.get_right_direction(:north))
-    assert_equal('south', sut.get_right_direction(:east))
-    assert_equal('west', sut.get_right_direction(:south))
-    assert_equal('north', sut.get_right_direction(:west))
+    assert_equal('east', Passage.get_right_direction(:north))
+    assert_equal('south', Passage.get_right_direction(:east))
+    assert_equal('west', Passage.get_right_direction(:south))
+    assert_equal('north', Passage.get_right_direction(:west))
   end
 
   test "get backward direction" do
-    sut = Passage.new()
-    assert_equal('south', sut.get_backward_direction(:north))
-    assert_equal('west', sut.get_backward_direction(:east))
-    assert_equal('north', sut.get_backward_direction(:south))
-    assert_equal('east', sut.get_backward_direction(:west))
+    assert_equal('south', Passage.get_backward_direction(:north))
+    assert_equal('west', Passage.get_backward_direction(:east))
+    assert_equal('north', Passage.get_backward_direction(:south))
+    assert_equal('east', Passage.get_backward_direction(:west))
   end
 end
