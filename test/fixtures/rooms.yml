@@ -7,3 +7,7 @@ room00:
 room01:
   x: 0
   y: 1
+
+room10:
+  x: 1
+  y: 0

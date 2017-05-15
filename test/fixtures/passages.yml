@@ -9,3 +9,13 @@ two:
   source: room01
   destination: room00
   direction: <%= Passage.directions[:south] %>
+
+three:
+  source: room00
+  destination: room10
+  direction: <%= Passage.directions[:east] %>
+
+four:
+  source: room10
+  destination: room00
+  direction: <%= Passage.directions[:west] %>
