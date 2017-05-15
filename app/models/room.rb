@@ -13,4 +13,10 @@ class Room < ApplicationRecord
       end
       return nil
    end
+
+   def go_left_direction(direction)
+      direction = direction.to_s
+      idx = (Passage.directions[direction] - 1) % Passage.directions.length
+      return Passage.directions.key(idx)
+   end
 end
