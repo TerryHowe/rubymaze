@@ -236,7 +236,7 @@ FORWARD_RIGHT_FORWARD_LEFT = """
     t = [VIEW]
     left_room = room.go_left(direction)
     forward_room = room.go_forward(direction)
-    #right_room = room.go_right(direction)
+    right_room = room.go_right(direction)
     if left_room.nil?
       t.append(LEFT)
     else
@@ -268,12 +268,13 @@ FORWARD_RIGHT_FORWARD_LEFT = """
         end
       end
     end
-    #if right_room.nil?
-    #  t.append(RIGHT)
-    #else
-    #  if not right_room.go_forward(direction):
-    #    t.append(RIGHT_FORWARD_LEFT)
-    #end
+    if right_room.nil?
+      t.append(RIGHT)
+    else
+      if right_room.go_forward(direction).nil?
+        t.append(RIGHT_FORWARD_LEFT)
+      end
+    end
     r3 = (t.map{|x| x.split("")}).transpose
     return (r3.map{|x| x.max}).join("")
   end
