@@ -19,4 +19,9 @@ class Room < ApplicationRecord
       direction = Passage.get_right_direction(direction)
       return self.go_forward(direction)
    end
+
+   def go_backward(direction)
+      direction = Passage.get_backward_direction(direction)
+      return self.go_forward(direction)
+   end
 end
