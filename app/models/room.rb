@@ -6,11 +6,7 @@ class Room < ApplicationRecord
 
    def go_forward(direction)
       direction = direction.to_s
-      for p in self.passages
-         if p.direction == direction
-            return p.destination
-         end
-      end
-      return nil
+      p = self.passages.where(direction: direction).first
+      return p.nil? ? nil : p.destination
    end
 end
