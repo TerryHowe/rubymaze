@@ -9,4 +9,9 @@ class Room < ApplicationRecord
       p = self.passages.where(direction: direction).first
       return p.nil? ? nil : p.destination
    end
+
+   def go_left(direction)
+      direction = Passage.get_left_direction(direction)
+      return self.go_forward(direction)
+   end
 end
