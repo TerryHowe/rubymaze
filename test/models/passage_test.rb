@@ -20,4 +20,12 @@ class PassageTest < ActiveSupport::TestCase
     assert_equal('east', sut.go_left_direction(:south))
     assert_equal('south', sut.go_left_direction(:west))
   end
+
+  test "go right direction" do
+    sut = Passage.new()
+    assert_equal('east', sut.go_right_direction(:north))
+    assert_equal('south', sut.go_right_direction(:east))
+    assert_equal('west', sut.go_right_direction(:south))
+    assert_equal('north', sut.go_right_direction(:west))
+  end
 end
