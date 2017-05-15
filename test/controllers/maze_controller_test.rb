@@ -6,19 +6,19 @@ EXPECTED = """
  \\                               
   \\                              
    +                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
-   |                             
+   |\\                            
+   | \\                           
+   |  +                          
+   |  |                          
+   |  |                          
+   |  |                          
+   |  |                          
+   |  |                          
+   |  |                          
+   |  |                          
+   |  +                          
+   | /                           
+   |/                            
    +                             
   /                              
  /                               
@@ -30,9 +30,4 @@ EXPECTED = """
     assert_equal "maze", @controller.action_name
     assert_select "pre", EXPECTED
   end
-
-  #test "the maze helper" do
-  #  assert_equal 'abc', @controller.render(0,0,'N')
-  #end
-
 end
