@@ -246,7 +246,6 @@ FORWARD_RIGHT_FORWARD_LEFT = """
     end
     if forward_room.nil?
       t.append(FORWARD)
-      puts 'wot'
     else
       forward_left_room = forward_room.go_left(direction)
       if forward_left_room.nil?
