@@ -7,4 +7,10 @@ class Passage < ApplicationRecord
    def get_direction()
       return self.direction.to_s.capitalize
    end
+
+   def go_left_direction(direction)
+      direction = direction.to_s
+      idx = (Passage.directions[direction] - 1) % Passage.directions.length
+      return Passage.directions.key(idx)
+   end
 end
