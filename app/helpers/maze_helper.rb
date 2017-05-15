@@ -256,8 +256,9 @@ FORWARD_RIGHT_FORWARD_LEFT = """
           t.append(FORWARD_LEFT_FORWARD_RIGHT)
         end
       end
-    #  if not forward_room.go_forward(direction):
-    #    t.append(FORWARD_FORWARD)
+      if forward_room.go_forward(direction).nil?
+        t.append(FORWARD_FORWARD)
+      end
     #  forward_right_room = forward_room.go_right(direction)
     #  if forward_right_room:
     #    if not forward_right_room.go_forward(direction):
