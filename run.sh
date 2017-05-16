@@ -11,4 +11,5 @@
 #	--log-file=${ERROR_LOG} \
 #	--access-logfile=${ACCESS_LOG} \
 #	"$@"
+export SECRET_KEY_BASE=$(rake secret)
 rails server -e production
