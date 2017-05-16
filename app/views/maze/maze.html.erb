@@ -1,13 +1,45 @@
-<h1>Room</h1>
-<p>
-  <strong>X,Y:</strong>
-  <%= @room.x %>,
-  <%= @room.y %>
-  <%= @direction %>
-</p>
+<script>
+function goLeft() {
+    window.location.href = "/maze/<%= @dest[:left] %>";
+}
+function goBackward() {
+   <%- unless @dest[:backward].nil? %>
+    window.location.href = "/maze/<%= @dest[:backward] %>";
+   <%- end %>
+}
+function goRight() {
+    window.location.href = "/maze/<%= @dest[:right] %>";
+}
+function goForward() {
+   <%- unless @dest[:forward].nil? %>
+    window.location.href = "/maze/<%= @dest[:forward] %>";
+   <%- end %>
+}
+
+function keyDown(event) {
+    switch (event.key) {
+    case 'w':
+        goForward();
+        break;
+    case 'a':
+        goLeft();
+        break;
+    case 's':
+        goBackward();
+        break;
+    case 'd':
+        goRight();
+        break;
+    }
+}
+addEventListener("keydown", keyDown);
+</script>
+
+<h1>Looking <%= @direction_long %> from <%= @room.x %>, <%= @room.y %>.</h1>
 <pre>
 <%= render(@room, @direction) %>
 </pre>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<b>w:</b> forward<br>
+<b>a:</b> left<br>
+<b>d:</b> right<br>
+<b>s:</b> backward<br>
