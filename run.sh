@@ -11,4 +11,4 @@
 #	--log-file=${ERROR_LOG} \
 #	--access-logfile=${ACCESS_LOG} \
 #	"$@"
-rails server -b 0.0.0.0
+rails server -e production
