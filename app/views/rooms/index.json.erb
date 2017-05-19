@@ -3,6 +3,6 @@
     "data": [<%- @rooms.each do |room| %><%= @sep %>{
         "id": <%= room.id %>,
         "x": <%= room.x %>,
-        "y": "<%= room.y %>"
+        "y": <%= room.y %>
     }<% @sep = ", " %><% end %>]
 }
