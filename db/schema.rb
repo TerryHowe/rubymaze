@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 20170510163551) do
 
-  create_table "passages", force: :cascade do |t|
-    t.integer "source_id"
-    t.integer "destination_id"
+  create_table "passages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.bigint "source_id"
+    t.bigint "destination_id"
     t.integer "direction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["destination_id"], name: "index_passages_on_destination_id"
+    t.index ["source_id", "direction"], name: "index_passages_on_source_id_and_direction", unique: true
     t.index ["source_id"], name: "index_passages_on_source_id"
-    t.index [nil, "direction"], name: "index_passages_on_source_and_direction", unique: true
   end
 
-  create_table "rooms", force: :cascade do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "x"
     t.integer "y"
     t.datetime "created_at", null: false
