@@ -11,5 +11,5 @@ RUN bundle install
 RUN bundle exec rake RAILS_ENV=production assets:precompile
 RUN rails db:migrate RAILS_ENV=production
 
-EXPOSE 3000
+EXPOSE 4000
 ENTRYPOINT ["/rubymaze/run.sh"]
