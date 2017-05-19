@@ -1,0 +1,8 @@
+<%- @sep = "" %>
+{
+    "data": [<%- @rooms.each do |room| %><%= @sep %>{
+        "id": <%= room.id %>,
+        "x": <%= room.x %>,
+        "y": "<%= room.y %>"
+    }<% @sep = ", " %><% end %>]
+}
