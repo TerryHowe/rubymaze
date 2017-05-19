@@ -1,8 +1,9 @@
 <%- @sep = "" %>
 {
     "data": [<%- @passages.each do |passage| %><%= @sep %>{
-        "source_id": <%= passage.source.x %>,
-        "destination_id": <%= passage.destination.x %>,
+        "id": <%= passage.id %>,
+        "source_id": <%= passage.source.id %>,
+        "destination_id": <%= passage.destination.id %>,
         "direction": "<%= passage.direction %>"
     }<% @sep = ", " %><% end %>]
 }
