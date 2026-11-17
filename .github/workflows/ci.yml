@@ -35,9 +35,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install MySQL client library
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libmysqlclient-dev
-
       - uses: ruby/setup-ruby@4e97ecde5048e1e0816923020652678063ffbf65 # v1.339.0
         with:
           ruby-version: "3.4"
