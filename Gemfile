@@ -7,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.2.3'
+gem 'rails', '~> 8.0.5', '>= 8.0.5.2'
 # Libraries extracted from Ruby's stdlib that are no longer default gems on
-# Ruby 3.4+/4.0. Rails 7.2 and its deps still `require` these, so pin them
+# Ruby 3.4+/4.0. Rails and its deps still `require` these, so pin them
 # explicitly. Harmless on older Rubies where they ship with core.
 gem 'ostruct'
 gem 'mutex_m'
