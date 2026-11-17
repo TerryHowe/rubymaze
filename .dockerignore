@@ -1,0 +1,7 @@
+.git
+.bundle
+.claude
+log/*
+tmp/*
+public/assets
+vendor/bundle

@@ -1,15 +1,24 @@
-FROM ruby:2.4
+FROM ruby:3.4-slim
 
-RUN apt-get update && apt-get install -y \
-      --fix-missing --no-install-recommends \
-      build-essential nodejs \
+# build-essential + libmysqlclient for the mysql2 native extension,
+# nodejs as the ExecJS runtime for uglifier/coffee-script asset compilation.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      build-essential default-libmysqlclient-dev pkg-config nodejs \
       && rm -rf /var/lib/apt/lists/*
-WORKDIR /
-RUN git clone https://github.com/TerryHowe/rubymaze.git
+
+ENV RAILS_ENV=production \
+    BUNDLE_DEPLOYMENT=1 \
+    BUNDLE_WITHOUT="development:test" \
+    RAILS_SERVE_STATIC_FILES=1 \
+    RAILS_LOG_TO_STDOUT=1
+
 WORKDIR /rubymaze
+
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
-RUN bundle exec rake RAILS_ENV=production assets:precompile
-RUN rails db:migrate RAILS_ENV=production
+
+COPY . .
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rake assets:precompile
 
 EXPOSE 4000
 ENTRYPOINT ["/rubymaze/run.sh"]
